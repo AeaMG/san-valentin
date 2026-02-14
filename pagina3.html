@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 3 - San Valentín</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fondo-movimiento">
+    <div class="contenido">
+        <!-- Contenedor del nuevo GIF y la pregunta -->
+        <div class="cuadro">
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzZ5bzRpcDQ1Y3A2aW44MWxzMG11amlyanN2YTU0c3A0ZWNoZHJpeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Y4z9olnoVl5QI/giphy.gif" 
+                 alt="Imagen de San Valentín" class="gif-centro">
+            
+            <p>Ultimo intento preciosa 😘</p>
+
+            <div class="botones">
+                <button class="btn" id="btnSi" onclick="window.location.href='principal.html';">Sí 🥰</button>
+                <button class="btn" id="btnNo3"> De verdad no quieres? 🫦 </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mover el botón "No" cuando el cursor se acerca, solo cuando ya estamos en la página 3
+        let btnNo = document.getElementById('btnNo3');
+
+        btnNo.addEventListener('mouseenter', function() {
+            // Mover el botón a una posición aleatoria dentro de la ventana
+            let randomX = Math.random() * window.innerWidth - btnNo.offsetWidth;
+            let randomY = Math.random() * window.innerHeight - btnNo.offsetHeight;
+
+            btnNo.style.position = 'absolute'; // Hacemos que el botón se pueda mover libremente
+            btnNo.style.left = `${randomX}px`; // Nueva posición horizontal
+            btnNo.style.top = `${randomY}px`; // Nueva posición vertical
+        });
+    </script>
+</body>
+</html>
